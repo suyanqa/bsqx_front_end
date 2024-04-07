@@ -12,25 +12,30 @@ function getItem(label, key, icon, children, type) {
     };
 }
 const items = [
-    getItem('Navigation One', 'sub1', < MailOutlined / > , [
-        getItem('Item 1', 'g1', null, [getItem('Option 1', '1'), getItem('Option 2', '2')], 'group'),
-        getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
+    getItem('客户管理', 'sub1', < AppstoreOutlined / > , [
+        getItem('客户信息管理', '2',null,[getItem('添加','2'),getItem('查询','0'),getItem('编辑','3'),getItem('删除','4')]),
+        getItem('客户车辆管理', '1',null,[getItem('添加','5'),getItem('查询','6'),getItem('编辑','7'),getItem('删除','8')]),
     ]),
-    getItem('Navigation Two', 'sub2', < AppstoreOutlined / > , [
-        getItem('Option 5', '5'),
-        getItem('Option 6', '6'),
-        getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+    getItem('出入库管理', 'sub2', < AppstoreOutlined / > , [
+        getItem('出库操作', 'g1', null, [getItem('新增出库', '9'), getItem('查询出库', '10'),getItem('删除出库','11')], 'group',),
+        getItem('入库操作', 'g2', null, [getItem('新增入库', '12'), getItem('查询入库', '13'),getItem('删除入库','14')], 'group'),
+    ]),
+    getItem('库存管理', 'sub3', < AppstoreOutlined / > , [
+        getItem('查询库存', '15'),
+        getItem('修改库存', '16'),
+        getItem('删除库存', '17'),
+        // getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
     ]),
     {
         type: 'divider',
     },
-    getItem('Navigation Three', 'sub4', < SettingOutlined / > , [
-        getItem('Option 9', '9'),
-        getItem('Option 10', '10'),
-        getItem('Option 11', '11'),
-        getItem('Option 12', '12'),
+    getItem('设置', 'sub4', < SettingOutlined / > , [
+        getItem('Option 9', '18'),
+        getItem('Option 10', '19'),
+        getItem('Option 11', '20'),
+        getItem('Option 12', '21'),
     ]),
-    getItem('Group', 'grp', null, [getItem('Option 13', '13'), getItem('Option 14', '14')], 'group'),
+    
 ];
 const App = () => {
     const onClick = (e) => {
