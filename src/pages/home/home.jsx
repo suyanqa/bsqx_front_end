@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppstoreOutlined,MailOutlined,SettingOutlined} from '@ant-design/icons';
+import {AppstoreOutlined} from '@ant-design/icons';
 import {Menu} from 'antd';
 
 function getItem(label, key, icon, children, type) {
@@ -26,15 +26,22 @@ const items = [
         getItem('删除库存', '17'),
         // getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
     ]),
+    getItem('维修订单','sub4',<AppstoreOutlined />,[
+        getItem('下单', '18'),
+        getItem('派工', '19'),
+        getItem('完工', '20'),
+        getItem('结算', '21'),
+        getItem('查询', '21'),
+    ]),
     {
         type: 'divider',
     },
-    getItem('设置', 'sub4', < SettingOutlined / > , [
-        getItem('Option 9', '18'),
-        getItem('Option 10', '19'),
-        getItem('Option 11', '20'),
-        getItem('Option 12', '21'),
-    ]),
+    // getItem('设置', 'sub4', < AppstoreOutlined / > , [
+    //     getItem('Option 9', '22'),
+    //     getItem('Option 10', '23'),
+    //     getItem('Option 11', '24'),
+    //     getItem('Option 12', '25'),
+    // ]),
     
 ];
 const App = () => {
