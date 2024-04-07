@@ -1,0 +1,97 @@
+
+/* 登录容器 */
+.login-container {
+    /* 布局方式为 flexbox */
+    display: flex;
+    /* flex 布局方向为垂直方向 */
+    flex-direction: column;
+    /* 子元素在水平方向上居中 */
+    align-items: center;
+    /* 容器的内边距 */
+    padding: 20px;
+  }
+  
+  /* 登录框 */
+  .login-box {
+    /* 边框样式 */
+    border: 1px solid #ddd;
+    /* 边框圆角半径 */
+    border-radius: 4px;
+    /* 盒阴影 */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.125);
+    /* 内边距 */
+    padding: 20px;
+    /* 宽度 */
+    width: 400px;
+  }
+  
+  /* 登录框标题 */
+  .login-box h3 {
+    /* 文本对齐方式为居中 */
+    text-align: center;
+    /* 下边距 */
+    margin-bottom: 10px;
+  }
+  
+  /* 分隔符 */
+  .divider-center {
+    /* 字体大小 */
+    font-size: 1.2em;
+    /* 上下边距 */
+    margin: 10px 0;
+    /* 显示方式为块级元素 */
+    display: block;
+    /* 文本对齐方式为居中 */
+    text-align: center;
+  }
+  
+  /* 登录表单 */
+  .login-form {
+    /* 上边距 */
+    margin-top: 20px;
+  }
+  
+  /* marginBottom 类的元素的下边距 */
+  .mb-4 {
+    /* 下边距 */
+    margin-bottom: 1rem;
+  }
+  
+  /* 表单控件 */
+  .form-control {
+    /* 显示方式为块级元素 */
+    display: block;
+    /* 行高 */
+    line-height: 1.8;
+    /* 宽度 */
+    width: 100%;
+    /* 内边距 */
+    padding: 0.5rem 1rem;
+    /* 字体大小 */
+    font-size: 1em;
+    /* 行高 */
+    line-height: 1.5;
+    /* 文本颜色 */
+    color: #495057;
+    /* 背景颜色 */
+    background-color: #fff;
+    /* 背景裁剪方式 */
+    background-clip: padding-box;
+    /* 边框样式 */
+    border: 1px solid #ced4da;
+    /* 边框圆角半径 */
+    border-radius: 0.25rem;
+    /* 边框颜色和阴影的过渡效果 */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* 表单控件获得焦点时的样式 */
+  .form-control:focus {
+    /* 边框颜色 */
+    border-color: #80bdff;
+    /* 轮廓样式 */
+    outline: 0;
+    /* 盒阴影 */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+  }
+  
