@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, Alert } from 'antd';
 import axios from 'axios';
+import { Routes, Route,Navigate } from 'react-router-dom';
 import './index.css';
-import Menu from '../Menu';
+import Home from '../../pages/home/home';
 
 class Index extends Component { 
   constructor(props) {
@@ -11,13 +12,9 @@ class Index extends Component {
     // 设置初始化状态
     this.state = {
       isLoggedIn: false,
-      message: '请登录'
+      message: '请登录',
+      redirectToHome: false // 新增 redirectToHome 状态，用于控制重定向
     };
-  }
-
-  componentDidMount() {
-    // 在组件挂载时执行的逻辑
-    // 可以在此处发送请求或执行其他副作用操作
   }
 
   // 表单提交调用函数
@@ -35,7 +32,7 @@ class Index extends Component {
         console.log('登录成功:', response.data.message);
         console.log('欢迎信息:', response.data.data);
         // 设置登录状态为 true
-        this.setState({ isLoggedIn: true });
+        this.setState({ isLoggedIn: true, redirectToHome: true }); // 更新 redirectToHome 状态为 true
       } else {
         // 登录失败
         console.log('登录失败:', response.data.message);
@@ -50,12 +47,21 @@ class Index extends Component {
   };
 
   render() {
-    const { isLoggedIn, message } = this.state;
-  
+    const { isLoggedIn, message, redirectToHome } = this.state;
+
+    if (redirectToHome) {
+      return (
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
+        </Routes>
+      );
+    }
+
     return (
       <div>
         {isLoggedIn ? (
-          <Menu />
+          <Home />
         ) : (
           <div>
             <div className="login-container">
@@ -110,7 +116,6 @@ class Index extends Component {
       </div>
     );
   }
-  
 }
 
 export default Index;
