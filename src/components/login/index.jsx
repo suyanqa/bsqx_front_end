@@ -20,7 +20,7 @@ class Index extends Component {
 
   // 表单提交调用函数
   onFinish = (values) => {
-    console.log('表单接收到的数据: ', values);
+    // console.log('表单接收到的数据: ', values);
     const { username, password } = values;
 
     // 设置 isLoading 为 true，显示 Spin 组件

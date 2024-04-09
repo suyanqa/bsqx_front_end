@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+}
+
+.addComponents {
+    flex: 1; /* 使添加的组件占据剩余空间 */
+}
