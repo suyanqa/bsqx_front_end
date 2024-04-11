@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const EditableTable = () => {
   const [loading, setLoading] = useState(true);
-  const [dataSource, setDataSource] = useState([]);
+  const [dataSource, setDataSource] = useState([]); // 获取到的用户数据存入DataSource
   const [selectedItem, setSelectedItem] = useState(null);
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false); // 编辑状态的值
   const [form] = Form.useForm();
 
   // 获取所有客户信息
@@ -48,7 +48,7 @@ const EditableTable = () => {
             }
             return item;
           });
-          setDataSource(newData);
+          setDataSource(newData); // 设置修改后的新数据
           setModalVisible(false);
           setSelectedItem(null);
         } else {
@@ -86,6 +86,7 @@ const EditableTable = () => {
     {
       title: '操作',
       key: 'action',
+      // _表示当前行索引,record表示当前行的数据
       render: (_, record) => (
         <Button type="primary" onClick={() => handleEdit(record)}>
           编辑

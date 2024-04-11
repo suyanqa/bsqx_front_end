@@ -4,6 +4,7 @@ import { Menu } from 'antd';
 import AddComponent from '../../components/customer/add';
 import SelectComponent from '../../components/customer/select';
 import CompileComponent from '../../components/customer/compile';
+import DeleteComponent from '../../components/customer/delete';
 import "./index.css"
 
 
@@ -31,6 +32,9 @@ const App = () => {
                 break;
             case '5':
                 setRenderComponent(<CompileComponent/>)
+                break;
+            case '6':
+                setRenderComponent(<DeleteComponent/>)
                 break;
             default:
                 setRenderComponent(null);
