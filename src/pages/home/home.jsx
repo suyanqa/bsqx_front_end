@@ -3,6 +3,7 @@ import { AppstoreOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
 import AddComponent from '../../components/customer/add';
 import SelectComponent from '../../components/customer/select';
+import CompileComponent from '../../components/customer/compile';
 import "./index.css"
 
 
@@ -20,13 +21,16 @@ const App = () => {
     const [renderComponent, setRenderComponent] = useState(null); // 使用状态来控制是否渲染组件
 
     const onClick = (e) => {
-        console.log('click ', e);
+        console.log('用户点击了 ', e);
         switch (e.key) {
             case '3':
                 setRenderComponent(<AddComponent />);
                 break;
             case '4':
                 setRenderComponent(<SelectComponent />);
+                break;
+            case '5':
+                setRenderComponent(<CompileComponent/>)
                 break;
             default:
                 setRenderComponent(null);

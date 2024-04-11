@@ -25,28 +25,30 @@ const App = () => {
   };
 
   return (
-    <div className='select' style={{ width: 600 }}>
-      <Search
-        placeholder="请输入用户名进行搜索"
-        enterButton="搜索用户" // 使用 Ant Design 的搜索按钮
-        size="large"
-        onSearch={handleSearch} // 添加搜索回调函数
-      />
-      {isLoading && <Spin size="large" />} {/* 加载状态显示 */}
-      <List
-        size="large"
-        bordered
-        dataSource={searchResult} // 使用搜索结果作为数据源
-        renderItem={(item) => (
-          <List.Item>
-            <div>{`ID: ${item.id}`}</div>
-            <div>{`姓名: ${item.name}`}</div>
-            <div>{`联系方式: ${item.contactNumber}`}</div>
-            <div>{`其他联系方式: ${item.additionalContactNumber}`}</div>
-          </List.Item>
-        )} // 渲染每个搜索结果项
-        locale={{ emptyText: '暂无数据' }} // 设置没有数据时的提示文本
-      />
+    <div className='select' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ width: 600 }}>
+        <Search
+          placeholder="请输入用户名进行搜索"
+          enterButton="搜索用户" // 使用 Ant Design 的搜索按钮
+          size="large"
+          onSearch={handleSearch} // 添加搜索回调函数
+        />
+        {isLoading && <Spin size="large" />} {/* 加载状态显示 */}
+        <List
+          size="large"
+          bordered
+          dataSource={searchResult} // 使用搜索结果作为数据源
+          renderItem={(item) => (
+            <List.Item>
+              <div>{`ID: ${item.id}`}</div>
+              <div>{`姓名: ${item.name}`}</div>
+              <div>{`联系方式: ${item.contactNumber}`}</div>
+              <div>{`其他联系方式: ${item.additionalContactNumber}`}</div>
+            </List.Item>
+          )} // 渲染每个搜索结果项
+          locale={{ emptyText: '暂无数据' }} // 设置没有数据时的提示文本
+        />
+      </div>
     </div>
   );
 };
