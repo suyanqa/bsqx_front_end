@@ -5,6 +5,19 @@ import AddComponent from '../../components/customer/add';
 import SelectComponent from '../../components/customer/select';
 import CompileComponent from '../../components/customer/compile';
 import DeleteComponent from '../../components/customer/delete';
+import AddVehicle from '../../components/vehicle/add'
+import SelectVehicleComponent from '../../components/vehicle/select'
+import VehicleCompile from '../../components/vehicle/compile';
+import VehicleDeleteComponent from '../../components/vehicle/delete'
+import OutboundComponent from '../../components/outbound/add'
+import SearchOutBoundSelect from '../../components/outbound/select'
+import DeleteOutBound from '../../components/outbound/delete';
+import CompileOutBound from '../../components/outbound/compile';
+import AddInbound from '../../components/inbound/add'
+import DeleteInbound from '../../components/inbound/delete'
+import SelectInbound from '../../components/inbound/select'
+import CompileInbound from '../../components/inbound/compile'
+
 import "./index.css"
 
 
@@ -36,6 +49,42 @@ const App = () => {
             case '6':
                 setRenderComponent(<DeleteComponent/>)
                 break;
+            case '7':
+                setRenderComponent(<AddVehicle/>)
+                break
+            case '8':
+                setRenderComponent(<SelectVehicleComponent/>)
+                break;
+            case '9':
+                setRenderComponent(<VehicleCompile/>)
+                break;
+            case '10':
+                setRenderComponent(<VehicleDeleteComponent/>)
+                break
+            case '11':
+                setRenderComponent(<OutboundComponent/>)
+                break;
+            case '12':
+                setRenderComponent(<SearchOutBoundSelect/>)
+                break;
+            case '13':
+                setRenderComponent(<DeleteOutBound/>)
+                break;
+            case '25':
+                setRenderComponent(<CompileOutBound/>)
+                break;
+            case '14':
+                setRenderComponent(<AddInbound/>)
+                break;
+            case '15':
+                setRenderComponent(<SelectInbound/>)
+                break;
+            case '16':
+                setRenderComponent(<DeleteInbound/>)
+                break;
+            case '26':
+                setRenderComponent(<CompileInbound/>)
+                break;
             default:
                 setRenderComponent(null);
         }
@@ -48,22 +97,22 @@ const App = () => {
             getItem('客户车辆管理', '2', null, [getItem('添加', '7'), getItem('查询', '8'), getItem('编辑', '9'), getItem('删除', '10')]),
         ]),
         getItem('出入库管理', 'sub2', <AppstoreOutlined />, [
-            getItem('出库操作', 'g1', null, [getItem('新增出库', '11'), getItem('查询出库', '12'), getItem('删除出库', '13')], 'group',),
-            getItem('入库操作', 'g2', null, [getItem('新增入库', '14'), getItem('查询入库', '15'), getItem('删除入库', '16')], 'group'),
+            getItem('出库操作', 'g1', null, [getItem('新增出库', '11'), getItem('查询出库', '12'), getItem('删除出库', '13'),getItem('编辑出库记录',25)], 'group',),
+            getItem('入库操作', 'g2', null, [getItem('新增入库', '14'), getItem('查询入库', '15'), getItem('删除入库', '16'),getItem('编辑入库记录',26)], 'group'),
         ]),
-        getItem('库存管理', 'sub3', <AppstoreOutlined />, [
-            getItem('查询库存', '17'),
-            getItem('修改库存', '18'),
-            getItem('删除库存', '19'),
-            // getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
-        ]),
-        getItem('维修订单', 'sub4', <AppstoreOutlined />, [
-            getItem('下单', '20'),
-            getItem('派工', '21'),
-            getItem('完工', '22'),
-            getItem('结算', '23'),
-            getItem('查询', '24'),
-        ]),
+        // getItem('库存管理', 'sub3', <AppstoreOutlined />, [
+        //     getItem('查询库存', '17'),
+        //     getItem('修改库存', '18'),
+        //     getItem('删除库存', '19'),
+        //     // getItem('Submenu', 'sub3', null, [getItem('Option 7', '7'), getItem('Option 8', '8')]),
+        // ]),
+        // getItem('维修订单', 'sub4', <AppstoreOutlined />, [
+        //     getItem('下单', '20'),
+        //     getItem('派工', '21'),
+        //     getItem('完工', '22'),
+        //     getItem('结算', '23'),
+        //     getItem('查询', '24'),
+        // ]),
         {
             type: 'divider',
         },
