@@ -26,21 +26,21 @@ class Index extends Component {
     // 设置 isLoading 为 true，显示 Spin 组件
     this.setState({ isLoading: true });
 
-    axios.post('/login', {
+    axios.post('/api/login', {
       username,
       password
     })
       .then((response) => {
         if (response.data.success) {
           // 登录成功
-          console.log('登录成功:', response.data.message);
-          console.log('欢迎信息:', response.data.data);
+          // console.log('登录成功:', response.data.message);
+          // console.log('欢迎信息:', response.data.data);
           // 设置登录状态为 true
           this.setState({ isLoggedIn: true, redirectToHome: true });
         } else {
           // 登录失败
-          console.log('登录失败:', response.data.message);
-          console.log('失败原因:', response.data.data);
+          // console.log('登录失败:', response.data.message);
+          // console.log('失败原因:', response.data.data);
           // 更新消息状态
           this.setState({ message: '用户名或密码错误' });
         }

@@ -19,7 +19,7 @@ const App = () => {
   const Axios = (keyword) => {
     if (Number.isInteger(parseInt(keyword))) {
       console.log(keyword);
-      axios.post('/vehicle/search', { id: keyword })
+      axios.post('/api/vehicle/search', { id: keyword })
         .then((response) => {
           if (response.data.success) {
             setSearchResult(response.data.data); // 将搜索结果保存到状态中

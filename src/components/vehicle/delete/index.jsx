@@ -12,7 +12,7 @@ const DeleteComponent = () => {
   const handleDeleteConfirm = () => {
     // 请求前输出用户输入的id值
     console.log(inputValue);
-    axios.post(`/vehicle/delete/${inputValue}`)
+    axios.post(`/api/vehicle/delete/${inputValue}`)
     .then(response => {
       if (response.data.success) {
         message.success(response.data.message);

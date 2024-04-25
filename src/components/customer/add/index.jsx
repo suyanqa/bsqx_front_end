@@ -10,7 +10,7 @@ const App = () => {
   const onFinish = (values) => {
     const { name, contactNumber, additionalContactNumber } = values;
     axios
-      .post('/customer/add', {
+      .post('/api/customer/add', {
         name,
         contactNumber,
         additionalContactNumber,

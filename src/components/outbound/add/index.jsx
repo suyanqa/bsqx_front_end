@@ -13,7 +13,7 @@ const App = () => {
     values.itemId = nanoid()
 
     axios
-    .post('/outbound/add', values)
+    .post('/api/outbound/add', values)
     .then((response) => {
       if (response.data.success) {
         // 成功处理

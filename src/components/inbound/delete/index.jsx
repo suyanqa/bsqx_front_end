@@ -9,7 +9,7 @@ const DeleteComponent = () => {
 
   const handleDeleteConfirm = () => {
     console.log(inputValue); // 确认使用 inputValue 进行删除
-    axios.post(`/inbound/delete/${inputValue}`)
+    axios.post(`/api/inbound/delete/${inputValue}`)
       .then(response => {
         if (response.data.success) {
           message.success(response.data.message);

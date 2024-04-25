@@ -11,7 +11,7 @@ const EditableTable = () => {
 
   // 获取所有客户信息
   useEffect(() => {
-    axios.post('/outbound/all')
+    axios.post('/api/outbound/all')
       .then(response => {
         // console.log(response.data);
         setDataSource(response.data.data);
@@ -38,7 +38,7 @@ const EditableTable = () => {
 
   // 提交编辑后的数据
   const onFinish = (values) => {
-    axios.post(`/outbound/edit/${selectedItem.id}`, values)
+    axios.post(`/api/outbound/edit/${selectedItem.id}`, values)
       .then(response => {
         if (response.data.success) {
           message.success('编辑成功');

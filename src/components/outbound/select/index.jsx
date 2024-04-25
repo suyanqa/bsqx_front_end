@@ -11,7 +11,7 @@ const App = () => {
   const handleSearch = (keyword) => {
     setIsLoading(true); // 开始加载，显示加载状态
 
-    axios.post('/outbound/search', {
+    axios.post('/api/outbound/search', {
         keyword
     }).then((response) => {
       if (response.data.success) {

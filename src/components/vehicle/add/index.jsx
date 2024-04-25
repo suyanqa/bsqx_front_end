@@ -10,7 +10,7 @@ const App = () => {
   const onFinish = (values) => {
 
     axios
-    .post('/vehicle/add', values)
+    .post('/api/vehicle/add', values)
     .then((response) => {
       if (response.data.success) {
         // 成功处理
